@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite | 下一代的前端工具链</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .headfather{
+            position: fixed;
+            padding-top: 12px;
+            background-color:  rgba(255,255,255,.7);
+            height: 64px;
+            width: 100%;
+            z-index: 1;
+        }
+        .head{
+            left: 50%;
+            margin-left: -500px;
+            position: fixed;
+            padding-top: 12px;
+            /* width: 1440px;  */
+            height: 64px;
+            /* background-color:  rgba(255,255,255,.7); */
+            box-sizing: border-box;
+            z-index: 2;
+            /* width: 100%; */
+                                                                                      
+        }
+        .headleft{
+            width: 1000px;
+            /* margin-left: 155px; */
+            display: inline-block;
+        }
+        .headlefttext:hover{ 
+        color: #747575;
+    }
+        .headlefttext:hover .headimg1{
+            color:  #747575;
+        }
+        .headlefttext{
+            position: absolute;
+            left: -6%;
+            vertical-align: middle; 
+            display: inline-block;
+            font: normal 700 16px 微软雅黑;
+            color:#213547 ;
+            margin-bottom: 20px;
+        }
+        .headimg1{
+            position: absolute;
+            margin-top: -10px;
+            left: -10%;
+            height: 34px;
+            display: inline-block;
+            
+            
+        }
+        .headright{
+            position: absolute;
+            display: inline-block;
+            margin-top: 10px;
+            right: 0;        
+        }
+        .lianjie1{
+            position: relative;
+            width: 90px;
+            margin-left: 20px;
+        }
+        .box1{
+            position: absolute;
+            height: 100px;
+            width: 125px;
+            background-color: #fff;
+            left: -50%;
+            margin-left: 5px;
+            top:100%;
+            border-radius: 15px;
+            display: none; 
+            font: normal 400 16px 微软雅黑;
+            border: 1px solid #e7e7e7;
+        }
+        .lianjie1:hover{
+            color: #747575;
+        }
+        .lianjie1:hover .box1{
+            display: block;
+        }
+        .lianjie2{
+            position: relative;
+            width: 90px;
+            
+        }
+        .lianjie2:hover{
+            color: #747575;
+        }
+        .lianjie2:hover .box2{
+            display: block;
+        }
+        .headright li{
+            display: inline-block;
+            
+        }
+        .box2{
+            position: absolute;
+            height: 100px;
+            width: 125px;
+            background-color: #fff;
+            left: -50%;
+            margin-left: 5px;
+            top:100%;
+            border-radius: 15px;
+            display: none; 
+            font: normal 400 16px 微软雅黑;
+            border: 1px solid #e7e7e7;
+        }
+        .a1{
+            font: normal 400 16px 微软雅黑;
+            margin-left: 20px;
+            color: #213547;
+            text-decoration: none;
+        }
+        .an{
+            position: absolute;
+            font: normal 400 16px 微软雅黑;
+            margin-left: 20px;
+            color: #b7baff;
+            text-decoration: none;
+            left: -3%;
+        }
+        .an:hover{
+            color: #878dff;
+            text-decoration: none;
+        }
+        .a1:hover{
+            color: #878dff;
+            text-decoration: none;
+            
+        }
+        .arrow{
+            position: relative;
+            height: 16px;
+            width: 16px;
+            top:50%;
+            
+        }
+        /* 以上为标题内容 */
+        .bigbox1{
+            width: 1400px;
+            height: 480px;
+            position: relative;
+            transform:translate(-50%,0%);
+            left: 50%;
+            line-height: 616px;
+            background-color: #fff;
+            text-align: center;
+            
+        }
+        .png1{
+            position: relative;
+            height: 372px;
+            width: 372px;
+            left:51%;
+            top:-29%;
+            /* background: linear-gradient(135deg,#49c8ffca,#be34fec9);  */
+            border-radius: 186px; 
+            backdrop-filter: blur(20px);
+            z-index: 1;
+        }
+        .bac{
+            position: absolute;
+            height: 372px;
+            width: 372px;
+            left:61%;
+            margin-left: -7px;
+            top:22%;
+            background: linear-gradient(135deg,#49c8ffca,#be34fec9);
+            line-height: 372px;
+            border-radius: 186px; 
+        }
+        .centerbox1{
+            position: relative;
+            display: inline-block;
+            height: 616px;
+            width: 756px;
+            line-height: 616px;
+            right:30%;
+            background-color: #fff;
+        }
+        .centerbox1 div{
+            display: inline-block;
+        }
+        .c1{
+            font: normal 700 64px 微软雅黑;
+            position: absolute;
+            left:4%;
+            top:28%;
+            background-image:linear-gradient(135deg,#49c8ffca,#be34fec9); 
+            background-clip: text;
+            -webkit-background-clip:text;
+            color: transparent;
+        }
+        .c2{
+            font: normal 700 80px 微软雅黑;
+            position: absolute;
+            left:2%;
+            top:40%;
+        }
+        .c3{
+            position: absolute;
+            font: normal 400 34px 微软雅黑;
+            color: #747575;
+            left: 4%;
+            top:59%;
+        }
+        .c31{
+            height: 30px;
+            width: 60px;
+            background-color: #646cff;
+            position: absolute;
+            left: 105%;
+            top:20%;
+            border-radius: 15px;
+            font: normal 700 16px 微软雅黑;
+            color: #fff;
+            text-align: left;
+            padding-top: 5px;
+            box-sizing: border-box;
+        }
+        .c4{
+            height:39px;
+            width: 70px;
+            background-color: #646cff;
+            color:#b7baff;
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 20px;
+            top: 70%;
+            left:4%;
+            padding-top: 8px;
+            font: normal 400 16px 微软雅黑;
+        }
+        .c5{
+            font: normal 400 16px 微软雅黑;
+            background-color: #f2f2f2;
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 20px;
+            height:39px;
+            width: 170px;
+            top: 70%;
+            left:14%;
+            padding-top: 8px;
+        }
+        .c6{
+            font: normal 400 16px 微软雅黑;
+            background-color: #f2f2f2;
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 20px;
+            height:39px;
+            width: 170px;
+            top: 70%;
+            left:38%;
+            padding-top: 8px;
+        }
+        .c4:hover{
+            background-color: #747bff;
+        }
+        .c5:hover{
+            background-color: #e5e5e5;
+        }
+        .c6:hover{
+            background-color: #e5e5e5;
+        }
+        /* 以上是中间box1  */
+        .bigbox2{
+            width: 1200px;
+            height: 440px;
+            position: relative;
+            transform:translate(-50%,0%);
+            left: 50%;
+            top:-10%;
+            line-height: 440px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .b1{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            top:5%;
+            left: 0%;
+        }
+        .b2{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            top:55%;
+            left: 0%;
+        }
+        .b3{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            top:5%;
+            left: 32%;
+        }
+        .b4{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            top:55%;
+            left: 32%;
+        }
+        .b5{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            top:5%;
+            left: 64%;
+        }
+        .b6{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            top:55%;
+            left: 64%;
+        }
+        .b1img{
+            position: absolute;
+            left: 10%;
+            top:15%;
+        }
+        .b2img{
+            position: absolute;
+            left: 10%;
+            top:15%;
+        }
+        .b3img{
+            position: absolute;
+            left:10%;
+            top:15%;
+        }
+        .b4img{
+            position: absolute;
+            left: 10%;
+            top:15%;
+        }
+        .b5img{
+            position: absolute;
+            left: 10%;
+            top:15%;
+        }
+        .b6img{
+            position: absolute;
+            left: 10%;
+            top:15%;
+        }
+        .b1text{
+            position: absolute;
+            left: 10%;
+            top:50%;
+            font: normal 700 16px 微软雅黑;
+            
+        }
+        .b2text{
+            position: absolute;
+            left: 10%;
+            top:50%;
+            font: normal 700 16px 微软雅黑;
+        }
+        .b3text{
+            position: absolute;
+            left: 10%;
+            top:50%;
+            font: normal 700 16px 微软雅黑;
+        }
+        .b4text{
+            position: absolute;
+            left: 10%;
+            top:50%;
+            font: normal 700 16px 微软雅黑;
+        }
+        .b5text{
+            position: absolute;
+            left: 10%;
+            top:50%;
+            font: normal 700 16px 微软雅黑;
+        }
+        .b6text{
+            position: absolute;
+            left: 10%;
+            top:50%;
+            font: normal 700 16px 微软雅黑;
+        }
+        .b1text1{
+            position: absolute;
+            left: 2%;
+            top:70%;
+            font: normal 400 14px 微软雅黑;
+            width: 250px;
+            color: #a3a3a3;
+        }
+        .b1text2{
+            position: absolute;
+            left: 9%;
+            top:70%;
+            font: normal 400 14px 微软雅黑;
+            width: 250px;
+            color: #a3a3a3;
+        }
+        .b1text3{
+            position: absolute;
+            left: 8%;
+            top:70%;
+            font: normal 400 14px 微软雅黑;
+            width: 250px;
+            color: #a3a3a3;
+        }
+        .b1text4{
+            position: absolute;
+            left: 10%;
+            top:70%;
+            font: normal 400 14px 微软雅黑;
+            width: 250px;
+            color: #a3a3a3;
+        }
+        .b1text5{
+            position: absolute;
+            left: 8%;
+            top:70%;
+            font: normal 400 14px 微软雅黑;
+            width: 250px;
+            color: #a3a3a3;
+        }
+        .b1text6{
+            position: absolute;
+            left: 9%;
+            top:70%;
+            font: normal 400 14px 微软雅黑;
+            width: 250px;
+            color: #a3a3a3;
+        }
+        /* 以上为box2 */
+        .lastbox1{
+            position: absolute;
+            font: normal 400 14px 微软雅黑;
+            color: #a3a3a3;
+            width: 400px;
+            height: 300px;
+        }
+        .lastbox1img1{
+            position: absolute;
+            left: 190%;
+            top:20%;
+        }
+        .lastbox11{
+            position: absolute;
+            left: 160%;
+            top:45%;
+            width:300px;
+        text-align: center;        }
+    </style>
+</head>
+<body>
+    <div class="headfather">
+    <div class="head">
+        <div class="headleft">
+            <img src="logo.svg" alt="" class="headimg1">
+            <div class="headlefttext">
+                Vite 官方中文文档
+            </div>
+            
+
+        </div>
+        <div class="headright">
+            <ul><li><a class="a1" href="https://cn.vitejs.dev/guide/" target="_self">指引</a>
+            </li>
+            <li><a class="a1" href="https://cn.vitejs.dev/config/">配置</a>
+                
+            </li>
+            <li class="lianjie1">
+                相关链接
+                <img class="arrow" src="arrow-down.svg">
+                <div class="box1">
+                    <a class="a1" href="https://ak.hypergryph.com/" target="_blank">明日方舟</a>
+
+                </div>
+            </li>
+            <li class="lianjie2">
+                Version
+                <img class="arrow" src="arrow-down.svg">
+                <div class="box2">
+                    <a class="a1" href="https://ys.mihoyo.com/" target="_blank">
+                        原神
+                    </a>
+                </div>
+            </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+    <!-- 以上为标题内容 -->
+    <div class="bigbox1">
+        <div class="bac">
+
+        </div>
+        <img src="logo-with-shadow.png" class="png1">
+        <div class="centerbox1">
+            <div class="c1">
+                Vite
+            </div>
+            <div class="c2">
+                下一代的前端工具链
+            </div>
+            <div class="c3">
+                为开发提供极速响应
+                <div class="c31">v3.1.3</div>
+            </div>
+            <div class="c4">
+            <a class="an" href="https://cn.vitejs.dev/guide/" target="_self">开始</a>
+            </div>
+        <div class="c5">为什么选Vite？
+        </div>
+        <div class="c6">
+            在 GitHub 上查看
+        </div>
+        </div>
+    </div>
+    <!-- 以上是中间box -->
+    <div class="bigbox2">
+        <div class="b1">
+            <img src="4NOG2}C]ZPQE]{0U9B_9ARX.png" width="46px" height="46px" class="b1img">
+            <div class="b1text">
+                极速的服务启动
+            </div>
+            <div class="b1text1">
+                使用原生 ESM 文件，无需打包!
+            </div>
+        </div>
+        <div class="b2">
+            <img src="U[_EPY6}D)[IIQ`]3XE})OI.png"width="46px" height="46px" class="b2img">
+            <div class="b2text">
+                优化的构建
+            </div>
+            <div class="b1text2">
+                可选 “多页应用” 或 “库” 模式的预配置 Rollup 构建
+            </div>
+        </div>
+        <div class="b3">
+            <img src="C422J[IQ@`D(5Q1N([`5`62.png"width="46px" height="46px" class="b3img">
+            <div class="b3text">
+                轻量快速的热重载
+            </div>
+            <div class="b1text3">
+                无论应用程序大小如何，都始终极快的模块热替换（HMR）
+            </div>
+        </div>
+        <div class="b4">
+            <img src="S]N5S5`_60GNIRT{NG[$6%W.png"width="46px" height="46px" class="b4img">
+            <div class="b4text">
+                通用的插件
+            </div>
+            <div class="b1text4">
+                在开发和构建之间共享 Rollup-superset 插件接口。
+            </div>
+        </div>
+        <div class="b5">
+            <img src="F_1DZUNC6IY2YKPT}7O`PG0.png"width="46px" height="46px" class="b5img">
+            <div class="b5text">
+                丰富的功能
+            </div>
+            <div class="b1text5">
+                对 TypeScript、JSX、CSS 等支持开箱即用。
+            </div>
+        </div>
+        <div class="b6">
+            <img src="4R~0I%{DU4}BH@[IC~`P4NX.png"width="46px" height="46px" class="b6img">
+            <div class="b6text">
+                完全类型化的API
+            </div>
+            <div class="b1text6">
+                灵活的 API 和完整的 TypeScript 类型。
+            </div>
+        </div>
+    </div>
+    <!-- 以上为box2 -->
+    <br>
+    <hr>
+    <div class="lastbox1">
+        <img src="OIP-C.jfif" alt="" height="45px"width="45px" class="lastbox1img1">
+        <div class="lastbox11">Vite is free and open source, made possible by wonderful sponsors.</div>
+        
+    </div>
+</body>
+</html>
